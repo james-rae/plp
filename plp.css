@@ -1,0 +1,31 @@
+body {
+  margin: 10px 10px;
+  color: cornflowerblue;
+  background-color: black;
+}
+
+p {
+  text-align: center;
+  font-size: x-large;
+}
+
+.lisht {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+a {
+  border: 1px solid greenyellow;
+  padding: 10px;
+  font-size: large;
+}
+
+a:link,
+a:visited,
+a:visited,
+a:active {
+  color: paleturquoise;
+  text-decoration: none;
+}
