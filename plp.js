@@ -1,8 +1,10 @@
 const dompusData =
-  "U2FsdGVkX1/w0nNz9PKp5l+7tcIFHVRjncr+KlICjX6yEHcvNiYGGGm1HvwZhaWXOu9AAEcbmWDaD5TmJVwpa3/WgjB2cbw+SlTkhAt1HjsvPQmGeXBDyx/RdYAZNk8e7189Y/89vMp9Y6VOwRNUQvXMubLKkTwf2dOkLsZCinX8kKDb8yc7M/bYo4r9MJxlIO7/7mRY4/brP2zkvEVotcXO8+2lSNpDX7E0m2iBuxx0mOAConVEJEVlYmT+jInZBa6+3c2NqxvfiDiD6hdJ1QL51cZomC572HLiyls/CkyJX+ro2xUFpBxbTYQyTO+CKdXfk+uIL8tcp4SB/STtM0P0LuRa09m2qAFs5tG0jf5xUAarGnEgNI+rTlV1XFRQFzUblBMz/Hvhamk443pvFqePeJ2jBVAkYwoMjYOWpbDJtgzVvzPy+eyl2ur8NW3yGI/gHaFfR8KYTwr8SNn1AeFV8Ml94vdrdsQtt+NtThIRu6QJov8VB8feQnEb7vP9UyZuUtl2qMXI8IkwhS/KsmIPuNU8eDAM8wLh3xXm1xM41Ggf1nCmTi3rgoaxUDlS9A3OBen+cijQ1QTBpImOjA==";
+  "U2FsdGVkX1+QrppW5Pp1NWh9ifKP2uFmgRNh5av4t404LmcVoWLrjHoxkKaTl4H/MYOw7J6m1cByGuhPY3uaXyYhY5gHGxa0mcl2oItnN3O0kY7qvPawYOeYqdX74Itw1gQX8Hn4ENU+jB3pNzuvBt8ptoFnUZ8YDBaShnGI3jjMxKF5LfPqsCoJsL6Giuway1TfM905I/SD/UV9OdTrqhBCFW1QfgRQ8eXso7di9IK0NXj3fnse5x6/ZoELRoyJ8h74SyVn51tcuuWEU8iSSsAkwNM2I+KINBFVxjCqDvDbrfGt06WgjBY+dsXikqmNDB/XoQNjMD3eddR9mnIkFmLvAlL2AufOnEroTrgeLCiuP/TogiyKBnP1F0xhqmxZzaxd944foTj9v0FMe2/h7U+zUAmLDbnkLFyZwV4NGeYaBEyIM06wlJmZ0Ti+LCFc7cGeSF6Jaip02QVPowoe8pkhObyznrZE+BBrRUZwvrM01A+AJiWWTnoKHqVcceR2LMFLVaqzIMO/36mO1Xz/qzOMh3UkqdAnpK5hb16gqwwf3ny2SvLQCa4aHE31Iiee9/yfyueZx7CszkTj4W1tXl14ThE6E7J2zub4IJxFYe0QleOWKVzkau9VT8LLFi+FIyx6wecyrjqyCJE/5+GAlA==";
 
 const loadList = () => {
   const listDiv = document.getElementById("lisht");
+
+  const salty = "cdnJR5U7dogs??";
 
   try {
     // enjoy some hash
@@ -10,7 +12,7 @@ const loadList = () => {
     const urlHash = fancyUrl.hash.substring(1); // pop off the `#` at the start
 
     // decode
-    const cryptoMath = CryptoJS.AES.decrypt(dompusData, urlHash);
+    const cryptoMath = CryptoJS.AES.decrypt(dompusData, urlHash + salty);
     const cryptoText = cryptoMath.toString(CryptoJS.enc.Utf8);
 
     // uncompress
